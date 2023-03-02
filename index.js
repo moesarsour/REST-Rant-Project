@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+const methodOverride = require ('method-override')
 const app = express()
 
 app.set('views', __dirname + '/views')
@@ -22,4 +23,4 @@ app.listen(process.env.PORT)
 
 app.use(express.urlencoded({ extended: true }))
 
-
+app.use(methodOverride('_method'))
